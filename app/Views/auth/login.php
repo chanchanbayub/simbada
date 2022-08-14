@@ -129,9 +129,9 @@
                             icon: 'success',
                             title: `${response.success}`
                         });
-                        // setTimeout(function() {
-                        //     // window.location.href = `/${response.url}`;
-                        // }, 1500);
+                        setTimeout(function() {
+                            window.location.href = `/${response.url}`;
+                        }, 1500);
                     } else if (response.errors) {
                         Swal.fire({
                             icon: 'error',
