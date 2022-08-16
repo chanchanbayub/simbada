@@ -4,8 +4,19 @@
 <link rel="stylesheet" href="/assets/signaturepad/jquery.ui.css">
 <style>
     .signature {
-        width: 80%;
-        margin: 0 auto;
+        width: 100%;
+        /* margin: 0 auto; */
+        overflow: auto;
+    }
+
+    .kbw-signature {
+        width: 400px;
+        /* height: 200px; */
+    }
+
+    #canva canvas {
+        width: 100% !important;
+        height: auto;
     }
 </style>
 

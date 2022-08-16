@@ -6,8 +6,20 @@
 
 <style>
     .signature {
-        width: 40%;
+        width: 80%;
         margin: 0 auto;
+        overflow: auto;
+    }
+
+    .kbw-signature {
+        width: 400px;
+        /* height: 100px; */
+    }
+
+    #canva canvas {
+        width: 100% !important;
+        /* max-width: 100% !important; */
+        /* height: auto; */
     }
 </style>
 
@@ -236,6 +248,7 @@
                 <hr>
                 <h3 style="text-align:center">Tanda Tangan Pelanggar / Pengemudi </h3>
                 <hr>
+
                 <form id="signaturPad">
                     <div class="signature">
                         <br>
@@ -245,6 +258,7 @@
                             <textarea id="signature64" name="ttd" style="display: none;"></textarea>
                         </div>
                     </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak Setuju</button>
