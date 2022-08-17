@@ -42,6 +42,10 @@
                 <input type="text" class="form-control" id="noBap" name="noBap" value="<?= $penderekan["noBap"] ?>" disabled>
             </div>
             <div class="form-group">
+                <label for="unit_id">Unit / Regu :</label>
+                <input type="text" class="form-control" id="unit_id" name="unit_id" value="<?= $penderekan["unit_penindak"] ?>" disabled>
+            </div>
+            <div class="form-group">
                 <label for="jenis_kendaraan_id">Jenis Kendaraan :</label>
                 <select class="form-control" id="jenis_kendaraan_id" name="jenis_kendaraan_id" style="width:100% ;">
                     <option value="">--Silahkan Pilih--</option>
