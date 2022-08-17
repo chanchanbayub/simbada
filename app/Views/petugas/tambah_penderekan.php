@@ -6,20 +6,17 @@
 
 <style>
     .signature {
-        width: 80%;
+        width: 85%;
         margin: 0 auto;
-        overflow: auto;
     }
 
     .kbw-signature {
-        width: 400px;
-        /* height: 100px; */
+        width: auto !important;
     }
 
     #canva canvas {
         width: 100% !important;
-        /* max-width: 100% !important; */
-        /* height: auto; */
+        max-width: 100% !important;
     }
 </style>
 
@@ -228,7 +225,7 @@
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="syarat_dan_ketentuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Syarat Dan Ketentuan Kebijakan Privasi</h5>
@@ -248,7 +245,6 @@
                 <hr>
                 <h3 style="text-align:center">Tanda Tangan Pelanggar / Pengemudi </h3>
                 <hr>
-
                 <form id="signaturPad">
                     <div class="signature">
                         <br>
