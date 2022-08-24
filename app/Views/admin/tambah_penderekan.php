@@ -108,7 +108,7 @@
                 <div id="error_nomor_kendaraan" class="invalid-feedback">
                 </div>
             </div>
-            <div class=" form-group">
+            <div class="form-group">
                 <label for="warna_kendaraan">Warna Kendaraan :</label>
                 <input type="text" class="form-control" id="warna_kendaraan" name="warna_kendaraan">
                 <div id="error_warna_kendaraan" class="invalid-feedback">
@@ -127,13 +127,13 @@
             </div>
             <div class="form-group">
                 <label for="tanggal_penderekan">Tanggal Penderekan :</label>
-                <input type="date" class="form-control" id="tanggal_penderekan" name="tanggal_penderekan">
+                <input type="date" class="form-control" id="tanggal_penderekan" name="tanggal_penderekan" value="<?= date('Y-m-d') ?>">
                 <div id="error_tanggal_penderekan" class="invalid-feedback">
                 </div>
             </div>
             <div class="form-group">
                 <label for="jam_penderekan">Jam Penderekan :</label>
-                <input type="time" class="form-control" id="jam_penderekan" name="jam_penderekan">
+                <input type="time" class="form-control" id="jam_penderekan" name="jam_penderekan" value="<?= date('H:i') ?>">
                 <div id="error_jam_penderekan" class="invalid-feedback">
                 </div>
             </div>
@@ -224,18 +224,6 @@
                 <label for="foto">Foto Kendaraan :</label>
                 <input type="file" class="form-control" id="foto" name="foto">
                 <div id="error_foto" class="invalid-feedback">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="saksi_id">Saksi :</label>
-                <select class="form-control" id="saksi_id" name="saksi_id" style="width:100% ;">
-                    <option value="">--Silahkan Pilih--</option>
-                    <?php foreach ($saksi as $saksi) : ?>
-                        <option value="<?= $saksi["id"] ?>"> <?= $saksi["nama_saksi"] ?></option>
-                    <?php endforeach; ?>
-                </select>
-
-                <div id="error_saksi_id" class="invalid-feedback">
                 </div>
             </div>
             <div class="modal-footer">
@@ -348,9 +336,6 @@
             theme: "bootstrap4",
         });
 
-        $('#saksi_id').select2({
-            theme: "bootstrap4",
-        });
     });
 
     // Signature Pad
@@ -562,7 +547,6 @@
         let nomor_handphone_pengemudi = $('#nomor_handphone_pengemudi').val();
         let tempat_penyimpanan_kendaraan_id = $('#tempat_penyimpanan_kendaraan_id').val();
         let foto = $('#foto').val();
-        let saksi_id = $('#saksi_id').val()
 
         let formData = new FormData(this);
 
@@ -589,7 +573,6 @@
         formData.append('nomor_handphone_pengemudi', nomor_handphone_pengemudi);
         formData.append('tempat_penyimpanan_kendaraan_id', tempat_penyimpanan_kendaraan_id);
         formData.append('foto', foto);
-        formData.append('saksi_id', saksi_id);
 
         $("#syarat_dan_ketentuan").modal('show');
 

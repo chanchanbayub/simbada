@@ -254,24 +254,6 @@
                 <br>
                 <img src="/penderekan/<?= $penderekan["foto"] ?>" alt="foto_kendaraan" width="150">
             </div>
-
-            <div class="form-group">
-                <label for="saksi_id">Saksi :</label>
-                <select class="form-control" id="saksi_id" name="saksi_id" style="width:100% ;">
-                    <option value="">--Silahkan Pilih--</option>
-                    <?php foreach ($saksi as $saksi) : ?>
-                        <?php if ($penderekan["saksi_id"] == $saksi["id"]) : ?>
-                            <option value="<?= $saksi["id"] ?>" selected> <?= $saksi["nama_saksi"] ?></option>
-                        <?php else : ?>
-                            <option value="<?= $saksi["id"] ?>"> <?= $saksi["nama_saksi"] ?></option>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </select>
-
-                <div id="error_saksi_id" class="invalid-feedback">
-                </div>
-            </div>
-
             <div class="modal-footer">
                 <a href="/admin/penderekan" type="button" class="btn btn-danger"> <i class="fa fa-times"></i> Batal</a>
                 <button type="submit" class="btn btn-primary save"> <i class="fa fa-paper-plane"></i> Kirim</button>
@@ -368,9 +350,6 @@
                 theme: "bootstrap4",
             });
 
-            $('#saksi_id').select2({
-                theme: "bootstrap4",
-            });
         });
 
         $("#jenis_kendaraan_id").change(function(e) {

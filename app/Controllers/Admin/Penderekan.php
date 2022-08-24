@@ -16,7 +16,6 @@ use App\Models\Admin\KotaModel;
 use App\Models\Admin\LokasiPenderekanModel;
 use App\Models\Admin\PenderekanModel;
 use App\Models\Admin\ProvinsiModel;
-use App\Models\Admin\SaksiPenderekanModel;
 use App\Models\Admin\TempatPenyimpananModel;
 use App\Models\Admin\TypeKendaraanModel;
 use App\Models\Admin\UkpdModel;
@@ -43,8 +42,6 @@ class Penderekan extends BaseController
     protected $lokasiPenderekanModel;
     protected $kendaraanModel;
     protected $jenisPelanggaranModel;
-    protected $saksiPenderekanModel;
-
 
     public function __construct()
     {
@@ -65,7 +62,6 @@ class Penderekan extends BaseController
         $this->lokasiPenderekanModel = new LokasiPenderekanModel();
         $this->kendaraanModel = new KendaraanModel();
         $this->jenisPelanggaranModel = new JenisPelanggaranModel();
-        $this->saksiPenderekanModel = new SaksiPenderekanModel();
         $this->unitPenindakModel = new UnitPenindakModel();
         $this->ukpdModel = new UkpdModel();
     }
@@ -94,7 +90,6 @@ class Penderekan extends BaseController
             'kota' => $this->kotaModel->findAll(),
             'kecamatan' => $this->kecamatanModel->findAll(),
             'kelurahan' => $this->kelurahanModel->findAll(),
-            'saksi' => $this->saksiPenderekanModel->getSaksi(),
             'unit_penindak' => $this->unitPenindakModel->where(["ukpd_id" => session('ukpd_id')])->findAll(),
             'ukpd' => $this->ukpdModel->findAll()
         ];
@@ -249,12 +244,6 @@ class Penderekan extends BaseController
                         'max_size' => 'Ukuran Foto Terlalu Besar',
                     ]
                 ],
-                'saksi_id' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Nama Saksi Tidak Boleh Kosong!'
-                    ]
-                ],
             ])) {
                 $alert = [
                     'error' => [
@@ -279,7 +268,6 @@ class Penderekan extends BaseController
                         'nomor_handphone_pengemudi' => $this->validation->getError('nomor_handphone_pengemudi'),
                         'tempat_penyimpanan_kendaraan_id' => $this->validation->getError('tempat_penyimpanan_kendaraan_id'),
                         'foto' => $this->validation->getError('foto'),
-                        'saksi_id' => $this->validation->getError('saksi_id'),
                     ]
                 ];
             } else {
@@ -303,7 +291,6 @@ class Penderekan extends BaseController
                 $jam_penderekan = $this->request->getVar('jam_penderekan');
                 $tempat_penyimpanan_kendaraan_id = $this->request->getVar('tempat_penyimpanan_kendaraan_id');
                 $jenis_pelanggaran_id = $this->request->getVar('jenis_pelanggaran_id');
-                $saksi_id = $this->request->getVar('saksi_id');
                 //table lokasi_penderekan
                 $provinsi_id = $this->request->getVar('provinsi_id');
                 $kota_id = $this->request->getVar('kota_id');
@@ -339,7 +326,6 @@ class Penderekan extends BaseController
                     'tanggal_penderekan' => $tanggal_penderekan,
                     'jam_penderekan' => $jam_penderekan,
                     'tempat_penyimpanan_kendaraan_id' => $tempat_penyimpanan_kendaraan_id,
-                    'saksi_id' => $saksi_id,
                 ]);
 
                 $id_penderekan = $this->penderekanModel->InsertID();
@@ -461,7 +447,6 @@ class Penderekan extends BaseController
                 'kota' => $this->kotaModel->findAll(),
                 'kecamatan' => $this->kecamatanModel->findAll(),
                 'kelurahan' => $this->kelurahanModel->findAll(),
-                'saksi' => $this->saksiPenderekanModel->getSaksiNotNull()
             ];
 
             return view('admin/edit_data_penderekan', $data);
@@ -642,12 +627,6 @@ class Penderekan extends BaseController
                         'required' => 'Tempat Penyimpanan Kendaraan Tidak Boleh Kosong!'
                     ]
                 ],
-                'saksi_id' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Nama Saksi Tidak Boleh Kosong!'
-                    ]
-                ],
             ])) {
                 $alert = [
                     'error' => [
@@ -669,7 +648,6 @@ class Penderekan extends BaseController
                         'alamat_pengemudi' => $this->validation->getError('alamat_pengemudi'),
                         'nomor_handphone_pengemudi' => $this->validation->getError('nomor_handphone_pengemudi'),
                         'tempat_penyimpanan_kendaraan_id' => $this->validation->getError('tempat_penyimpanan_kendaraan_id'),
-                        'saksi_id' => $this->validation->getError('saksi_id'),
                     ]
                 ];
             } else {
@@ -707,7 +685,6 @@ class Penderekan extends BaseController
                 $jam_penderekan = $this->request->getVar('jam_penderekan');
                 $tempat_penyimpanan_kendaraan_id = $this->request->getVar('tempat_penyimpanan_kendaraan_id');
                 $jenis_pelanggaran_id = $this->request->getVar('jenis_pelanggaran_id');
-                $saksi_id = $this->request->getVar('saksi_id');
                 //table lokasi_penderekan
                 $id_penderekan = $this->request->getVar('id');
                 $provinsi_id = $this->request->getVar('provinsi_id');
@@ -731,7 +708,6 @@ class Penderekan extends BaseController
                     'tanggal_penderekan' => $tanggal_penderekan,
                     'jam_penderekan' => $jam_penderekan,
                     'tempat_penyimpanan_kendaraan_id' => $tempat_penyimpanan_kendaraan_id,
-                    'saksi_id' => $saksi_id,
                 ]);
 
                 $lokasiPenderekan = $this->lokasiPenderekanModel->where(["id_penderekan" => $id_penderekan])->first();

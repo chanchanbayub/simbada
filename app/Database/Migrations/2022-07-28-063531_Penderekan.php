@@ -47,12 +47,6 @@ class Penderekan extends Migration
                 'null' => false,
                 'unsigned' => true,
             ],
-            'saksi_id' => [
-                'type' => 'int',
-                'constraint' => 11,
-                'null' => false,
-                'unsigned' => true,
-            ],
             'created_at' => [
                 'type' => 'datetime'
             ],
@@ -65,7 +59,6 @@ class Penderekan extends Migration
         $this->forge->addForeignKey('bap_id', 'bap', 'id', 'cascade', 'cascade');
         $this->forge->addForeignKey('jenis_pelanggaran_id', 'jenis_pelanggaran', 'id', 'cascade', 'cascade');
         $this->forge->addForeignKey('tempat_penyimpanan_kendaraan_id', 'tempat_penyimpanan', 'id', 'cascade', 'cascade');
-        $this->forge->addForeignKey('saksi_id', 'saksi_penderekan', 'id', 'cascade', 'cascade');
         $attributes = ['ENGINE' => 'innoDB'];
         $this->forge->createTable('penderekan', false, $attributes);
     }

@@ -13,7 +13,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                 <div class="dropdown-header">Aksi:</div>
-                <a href="/admin/penderekan/form_penderekan" class="dropdown-item"> <i class=" fa fa-plus"> </i> Tambah BAP</a>
+                <a href="/admin/penderekan/form_penderekan" class="dropdown-item"> <i class=" fa fa-plus"> </i> Tambah Penderekan</a>
             </div>
 
         </div>

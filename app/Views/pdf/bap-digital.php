@@ -106,7 +106,7 @@
         }
 
         #data {
-            width: 60%;
+            width: 75%;
         }
 
         /* #data tr {
@@ -259,7 +259,7 @@
             <tr>
                 <td>
                     <p>----------Untuk pengeluaran kendaraan saudara diwajibkan membayar Retribusi sesuai Perda 1 Tahun 2015 tentang Perubahan Atas Perda 3 Tahun 2012 tentang Retribusi Daerah dan menyelesaikan administrasi Pengeluaran Kendaraan, selanjutnya pengambilan kendaraan dilakukan di Tempat Penyimpanan Kendaraan atas.
-                        <br> ----------Demikian Berita Acara Penderekan Pemindahan Kendaraan ini dibuat dengan sebenar benarnya atas kekuatan sumpah jabatan, kemudian ditutup dan ditandatangani di <b class="output">Jakarta</b> pada tanggal <b class="output"> <?= date_indo(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?> </b>.
+                        <br> ----------Demikian Berita Acara Penderekan Pemindahan Kendaraan ini dibuat dengan sebenar benarnya atas kekuatan sumpah jabatan, kemudian ditutup dan ditandatangani di <b class="output">Jakarta</b> pada tanggal <b class="output"> <?= date_indo(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?></b><b>.</b>
                     </p>
                 </td>
             </tr>
