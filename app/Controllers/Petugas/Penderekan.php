@@ -328,6 +328,24 @@ class Penderekan extends BaseController
                 $alamat_pengemudi = $this->request->getVar('alamat_pengemudi');
                 $nomor_handphone_pengemudi = $this->request->getVar('nomor_handphone_pengemudi');
 
+                // Generate Foto Pelanggar
+                $foto_pelanggar = $this->request->getVar('foto_pelanggar');
+
+                $direktori = "foto_pelanggar/";
+                $image = explode(";base64,", $foto_pelanggar);
+
+                $getTypeImages = explode("image/", $image[0]);
+
+                $typeImages = $getTypeImages[1];
+
+                $decodeImages = base64_decode($image[1]);
+
+                $createImage = $direktori . uniqid() . '.' . $typeImages;
+
+                file_put_contents($createImage, $decodeImages);
+                // End Foto Pelanggar
+
+                // Generate Tanda Tangan Digital
                 $ttd_digital = $this->request->getVar('ttd_digital');
 
                 $direktori = "ttd_digital/";
@@ -342,6 +360,7 @@ class Penderekan extends BaseController
                 $createRandomImage = $direktori . uniqid() . '.' . $typeImage;
 
                 file_put_contents($createRandomImage, $decodeImage);
+                // End Tanda Tangan Digital
 
                 $this->penderekanModel->save([
                     'ukpd_id' => $ukpd_id,
@@ -380,7 +399,8 @@ class Penderekan extends BaseController
                     'nama_pengemudi' => $nama_pengemudi,
                     'alamat_pengemudi' => $alamat_pengemudi,
                     'nomor_handphone_pengemudi' => $nomor_handphone_pengemudi,
-                    'ttd_digital' => $createRandomImage
+                    'ttd_digital' => $createRandomImage,
+                    'foto_pelanggar' => $createImage
                 ]);
 
                 $this->fotoKendaraanModel->save([

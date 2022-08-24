@@ -18,6 +18,17 @@
         width: 100% !important;
         max-width: 100% !important;
     }
+
+    .camera {
+        /* border: 1px solid black; */
+        width: 50%;
+        display: none;
+        margin: 0 auto;
+    }
+
+    #my_camera {
+        display: none;
+    }
 </style>
 
 <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
@@ -78,13 +89,13 @@
                 <div id="error_merk_kendaraan" class="invalid-feedback">
                 </div>
             </div>
-            <div class=" form-group">
+            <div class="form-group">
                 <label for="nomor_kendaraan">Nomor Kendaraan :</label>
                 <input type="text" class="form-control" id="nomor_kendaraan" name="nomor_kendaraan">
                 <div id="error_nomor_kendaraan" class="invalid-feedback">
                 </div>
             </div>
-            <div class=" form-group">
+            <div class="form-group">
                 <label for="warna_kendaraan">Warna Kendaraan :</label>
                 <input type="text" class="form-control" id="warna_kendaraan" name="warna_kendaraan">
                 <div id="error_warna_kendaraan" class="invalid-feedback">
@@ -202,6 +213,7 @@
                 <div id="error_foto" class="invalid-feedback">
                 </div>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger"> <i class="fa fa-times"></i> Batal</button>
                 <button type="submit" class="btn btn-primary save"> <i class="fa fa-paper-plane"></i> Kirim</button>
@@ -209,7 +221,6 @@
         </form>
     </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="syarat_dan_ketentuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -221,6 +232,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
                 <h3 style="text-align:center ;">Disclamer</h3>
                 <hr>
@@ -242,7 +254,11 @@
                             <textarea id="signature64" name="ttd" style="display: none;"></textarea>
                         </div>
                     </div>
-
+                    <div class="camera">
+                        <div id="my_camera"></div>
+                        <img src="" id="camera_webcam" alt="">
+                        <textarea name="foto_pelanggar" id="foto_pelanggar" cols="30" rows="10" style="display:none ;"></textarea>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak Setuju</button>
@@ -258,6 +274,8 @@
 <script src="/assets/signaturepad/jquery.ui.min.js"></script>
 <script src="/assets/signaturepad/jquery.signature.min.js"></script>
 <script src="/assets/signaturepad/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+
 
 <script>
     $(document).ready(function() {
@@ -303,6 +321,8 @@
         $('#petugas_id').select2({
             theme: "bootstrap4",
         });
+
+
     });
 
     // Signature Pad
@@ -460,11 +480,6 @@
         });
     });
 
-    $("#petugas_id").change(function(e) {
-        let id = $(this).val();
-        console.log(id);
-    })
-
     // Form Penderekan
     $("#form_penderekan").submit(function(e) {
         e.preventDefault();
@@ -521,16 +536,37 @@
 
         $("#syarat_dan_ketentuan").modal('show');
 
+        Webcam.set({
+            width: 240,
+            height: 240,
+            image_format: 'png',
+            jpeg_quality: 50,
+        });
+
+        Webcam.attach('#my_camera');
+
+        setTimeout(function() {
+            snap();
+        }, 5000);
 
         $("#syarat_dan_ketentuan").on('submit', '#signaturPad', function(e) {
             e.preventDefault();
             let signature = $("#signature64").val();
+            let foto_pelanggar = $("#foto_pelanggar").val();
             formData.append('ttd_digital', signature);
+            formData.append('foto_pelanggar', foto_pelanggar);
             sendData(formData);
+
         });
     });
 
-
+    function snap() {
+        Webcam.snap(function(picture) {
+            $("#camera_webcam").attr('src', `${picture}`);
+            $("#foto_pelanggar").val(picture);
+            $("#my_camera").css('display', 'none');
+        })
+    }
 
     function sendData(formData) {
         $("#syarat_dan_ketentuan").modal('hide');

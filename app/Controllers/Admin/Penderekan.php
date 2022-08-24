@@ -304,6 +304,23 @@ class Penderekan extends BaseController
                 $alamat_pengemudi = $this->request->getVar('alamat_pengemudi');
                 $nomor_handphone_pengemudi = $this->request->getVar('nomor_handphone_pengemudi');
 
+                // Generate Foto Pelanggar
+                $foto_pelanggar = $this->request->getVar('foto_pelanggar');
+
+                $direktori = "foto_pelanggar/";
+                $image = explode(";base64,", $foto_pelanggar);
+
+                $getTypeImages = explode("image/", $image[0]);
+
+                $typeImages = $getTypeImages[1];
+
+                $decodeImages = base64_decode($image[1]);
+
+                $createImage = $direktori . uniqid() . '.' . $typeImages;
+
+                file_put_contents($createImage, $decodeImages);
+                // End Foto Pelanggar
+
                 $ttd_digital = $this->request->getVar('ttd_digital');
 
                 $direktori = "ttd_digital/";
@@ -356,7 +373,8 @@ class Penderekan extends BaseController
                     'nama_pengemudi' => $nama_pengemudi,
                     'alamat_pengemudi' => $alamat_pengemudi,
                     'nomor_handphone_pengemudi' => $nomor_handphone_pengemudi,
-                    'ttd_digital' => $createRandomImage
+                    'ttd_digital' => $createRandomImage,
+                    'foto_pelanggar' => $createImage
                 ]);
 
                 $this->fotoKendaraanModel->save([
@@ -407,9 +425,17 @@ class Penderekan extends BaseController
 
             $ttd_digital = $this->identitasPengemudiModel->where(["id_penderekan" => $id])->first();
 
-            if ($ttd_digital["ttd_digital"] != null) {
+            if ($ttd_digital != null) {
                 $path_ttd = $ttd_digital["ttd_digital"];
-                unlink($path_ttd);
+                $path_foto = $ttd_digital["foto_pelanggar"];
+                if (file_exists($path_ttd)) {
+                    unlink($path_ttd);
+                }
+
+                if (file_exists($path_foto)) {
+                    unlink($path_foto);
+                }
+
                 if (file_exists($path_penderekan)) {
                     unlink($path_penderekan);
                 }

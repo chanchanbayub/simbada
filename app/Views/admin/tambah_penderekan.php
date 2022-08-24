@@ -18,6 +18,10 @@
         width: 100% !important;
         max-width: 100% !important;
     }
+
+    #my_camera {
+        display: none;
+    }
 </style>
 
 <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
@@ -266,7 +270,11 @@
                             <textarea id="signature64" name="ttd" style="display: none;"></textarea>
                         </div>
                     </div>
-
+                    <div class="camera">
+                        <div id="my_camera"></div>
+                        <img src="" id="camera_webcam" alt="">
+                        <textarea name="foto_pelanggar" id="foto_pelanggar" cols="30" rows="10" style="display:block ;"></textarea>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak Setuju</button>
@@ -282,6 +290,7 @@
 <script src="/assets/signaturepad/jquery.ui.min.js"></script>
 <script src="/assets/signaturepad/jquery.signature.min.js"></script>
 <script src="/assets/signaturepad/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -576,16 +585,37 @@
 
         $("#syarat_dan_ketentuan").modal('show');
 
+        Webcam.set({
+            width: 240,
+            height: 240,
+            image_format: 'png',
+            jpeg_quality: 50,
+        });
+
+        Webcam.attach('#my_camera');
+
+        setTimeout(function() {
+            snap();
+        }, 5000);
+
 
         $("#syarat_dan_ketentuan").on('submit', '#signaturPad', function(e) {
             e.preventDefault();
             let signature = $("#signature64").val();
+            let foto_pelanggar = $("#foto_pelanggar").val();
             formData.append('ttd_digital', signature);
+            formData.append('foto_pelanggar', foto_pelanggar);
             sendData(formData);
         });
     });
 
-
+    function snap() {
+        Webcam.snap(function(picture) {
+            $("#camera_webcam").attr('src', `${picture}`);
+            $("#foto_pelanggar").val(picture);
+            $("#my_camera").css('display', 'none');
+        })
+    }
 
     function sendData(formData) {
         $("#syarat_dan_ketentuan").modal('hide');

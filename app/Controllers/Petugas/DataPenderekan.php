@@ -104,8 +104,12 @@ class DataPenderekan extends BaseController
 
             if ($ttd_digital != null) {
                 $path_ttd = $ttd_digital["ttd_digital"];
+                $path_foto = $ttd_digital["foto_pelanggar"];
                 if (file_exists($path_ttd)) {
                     unlink($path_ttd);
+                }
+                if (file_exists($path_foto)) {
+                    unlink($path_foto);
                 }
                 if (file_exists($path)) {
                     unlink($path);

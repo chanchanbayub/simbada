@@ -45,6 +45,11 @@ class IdentitasPengemudi extends Migration
                 'constraint' => 255,
                 'null' => true
             ],
+            'foto_pelanggar' => [
+                'type' => 'varchar',
+                'constraint' => 255,
+                'null' => true
+            ],
             'created_at' => [
                 'type' => 'datetime'
             ],
