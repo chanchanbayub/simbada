@@ -31,6 +31,7 @@ class PdfController extends BaseController
         ];
         $html = view('pdf/bap-digital', $data);
         $this->mpdf->WriteHTML($html);
+
         $this->response->setHeader('Content-Type', 'application/pdf');;
         $this->mpdf->output('BAP_DIGITAL.pdf', 'I');
     }

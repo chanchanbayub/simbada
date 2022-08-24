@@ -7,171 +7,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BERITA ACARA PEMINDAHAN DAN PENDEREKAN KENDARAAN</title>
     <link rel="shortcut icon" href="/assets/img/logo2.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+        }
+
+        header {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #kopSurat {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: -15px;
+        }
+
+        .logo {
+            width: 75px;
+        }
+
+        #p1 {
+            font-size: 18px;
+            text-transform: uppercase;
+            line-height: 15px;
+            letter-spacing: 0px;
+            font-style: normal;
+        }
+
+        #p2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            line-height: 15px;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+
+        #p3 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 15px;
+        }
+
+        #p4 {
+            font-size: 14px;
+            line-height: 15px;
+            letter-spacing: 0px;
+            font-style: normal;
+        }
+
+        #p5 {
+            font-size: 12px;
+            text-transform: capitalize;
+            vertical-align: top;
+            padding-right: 40px;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-style: normal;
+        }
+
+        hr {
+            height: 2px;
+            color: black;
+        }
+
+        .ttd {
+            text-align: center;
+        }
+
+        #noSuratKend {
+            margin: 0 auto;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #noSuratKend td {
+            vertical-align: top;
+        }
+
+        .content-table {
+            margin: 0 auto;
+            width: 100%;
+            text-align: justify;
+        }
+
+        .content-table td {
+            padding: 5px 0;
+        }
+
+        .content-table td,
+        p {
+            line-height: 23px;
+        }
+
+        #data {
+            width: 60%;
+        }
+
+        /* #data tr {
+            padding: 3px 0;
+        } */
+
+        #data td {
+            line-height: 23px;
+        }
+
+        .table-footer {
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .output {
+            color: blue;
+        }
+
+        .ttd_digital {
+            width: 155px;
+        }
+
+        .ttd_cap {
+            box-sizing: border-box;
+            width: 180px;
+            /* height: 0px; */
+        }
+    </style>
 </head>
-<style>
-    * {
-        overflow: auto;
-    }
-
-    header {
-        width: 100%;
-        margin: 0 auto;
-        /* border: 1px solid black; */
-    }
-
-    #kopSurat {
-        width: 100%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        margin-bottom: -15px;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 0;
-    }
-
-    .logo {
-        width: 75px;
-    }
-
-    #p1 {
-        font-size: 18px;
-        text-transform: uppercase;
-        font-family: Arial;
-        line-height: 15px;
-        letter-spacing: 0px;
-        font-style: normal;
-    }
-
-    #p2 {
-        font-size: 24px;
-        text-transform: uppercase;
-        line-height: 15px;
-        letter-spacing: 1px;
-        font-weight: 900;
-    }
-
-    #p3 {
-        font-size: 14px;
-        letter-spacing: 1px;
-        line-height: 15px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #p4 {
-        font-size: 14px;
-        line-height: 15px;
-        letter-spacing: 0px;
-        font-style: normal;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #p5 {
-        font-size: 12px;
-        text-transform: capitalize;
-        vertical-align: top;
-        /* border: 1px solid black; */
-        padding-right: 40px;
-        padding-bottom: 5px;
-    }
-
-    /* #divine {
-		border: 300px solid black;
-	} */
-    hr {
-        height: 2px;
-        color: black;
-
-        /* border: 10px solid black; */
-    }
-
-    .ttd {
-        text-align: center;
-    }
-
-    #noSuratKend {
-        margin: 0 auto;
-        width: 100%;
-        font-size: 14px;
-        text-align: center;
-        /* margin-top: -10px; */
-        font-family: Arial;
-    }
-
-    #noSuratKend td {
-        vertical-align: top;
-    }
-
-    .content {
-        margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
-        width: 100%;
-        text-align: justify;
-        /* padding-top: 3px; */
-        /* border: 1px solid black; */
-    }
-
-    .content p {
-        font-size: 12px;
-    }
-
-    .content-table {
-        margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
-        width: 100%;
-        text-align: justify;
-        /* padding-top: 3px; */
-        /* border: 1px solid black; */
-    }
-
-    .paragraf-table {
-        padding-left: 21px;
-        font-family: Arial, Helvetica, sans-serif;
-        /* border: 1px solid black; */
-        width: 100%;
-        font-size: 12px;
-    }
-
-    .catatan {
-        padding-left: 21px;
-        font-family: Arial, Helvetica, sans-serif;
-        /* border: 1px solid black; */
-        width: 100%;
-        /* font-size: 12px; */
-    }
-
-    .table-footer {
-        /* border: 1px solid black; */
-        margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
-        width: 100%;
-        border-spacing: 2px;
-        /* text-align: center; */
-        /* border: 1px solid black; */
-    }
-
-    .output {
-        color: blue;
-    }
-
-    img {
-        box-sizing: border-box;
-    }
-
-    .ttd_digital {
-        width: 155px;
-
-    }
-
-    #tanda_tangan {
-        overflow: auto;
-        box-sizing: border-box;
-    }
-
-    /* .table-footer td {
-		text-align: center;
-	} */
-</style>
 
 <body>
     <header>
@@ -221,8 +188,7 @@
                 <td></td>
                 <td></td>
                 <td align="center">
-                    <h2 style="text-align:center; "> BERITA ACARA</h2>
-                    <br>
+                    <h2 style="text-align:center;"> BERITA ACARA</h2>
                     <h2 style="text-align:center;">PENDEREKAN PEMINDAHAN KENDARAAN</h2>
                 </td>
                 <td>
@@ -233,28 +199,14 @@
                 </td>
             </tr>
         </table>
-        <p style="text-align:justify;">Pada hari ini<b class="output"> <?= tanggal_indonesia(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?></b>, tanggal <b class="output"><?= date('d', strtotime($penderekan["tanggal_penderekan"])) ?></b>, bulan <b class="output"> <?= bulan(date('n', strtotime($penderekan["tanggal_penderekan"])))  ?> </b> tahun <b class="output"> <?= date('Y', strtotime($penderekan["tanggal_penderekan"])) ?> </b>pukul <b class="output"> <?= date('H:i', strtotime($penderekan["jam_penderekan"])) ?> </b> WIB, saya : <b class="output"><?= $penderekan["nama_ppns"] ?></b> NIP <b class="output"> <?= $penderekan["nip"] ?> </b> Selaku Penyidik Pegawai Negeri Sipil (PPNS) dari kantor tersebut diatas, bersama–sama dengan :
-        </p>
-        <table class="content">
-            <tr>
-                <td>
-                    <p>1. <b class="output"><?= $penderekan["nama"] ?></b> / </p>
-                    <p>2. <b class="output"><?= $penderekan["nama_saksi"] ?></b> /</p>
-                    <p>Masing–masing dari kantor yang sama, berdasarkan : ---------------------------------------------------------------------------------------- Surat Tugas nomor <b class="output">583</b> / <b class="output">1811</b> / <b class="output"> 231 </b> tanggal <b class="output"> 31 Juli 2022</b> tentang -----------------------------------------------------------------------------------
-                        <b class="output"> PENDEREKAN </b>---------------------------------------------------------
-                    </p>
-                    </p>
-                </td>
-            </tr>
-        </table>
         <table class="content-table">
             <tr>
                 <td>
-                    <p>Telah melakukan penderekan kendaraan sesuai dengan Perda 5 Tahun 2014 Tentang Transportasi di Jl ------------------------- <b class="output"><?= $penderekan['nama_jalan'] ?></b> ------------------------- dengan keterangan sebagai berikut :</p>
+                    <p style="text-align:justify;">Pada hari ini<b class="output"> <?= tanggal_indonesia(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?></b>, tanggal <b class="output"><?= date('d', strtotime($penderekan["tanggal_penderekan"])) ?></b>, bulan <b class="output"> <?= bulan(date('n', strtotime($penderekan["tanggal_penderekan"])))  ?> </b> tahun <b class="output"> <?= date('Y', strtotime($penderekan["tanggal_penderekan"])) ?> </b>pukul <b class="output"> <?= date('H:i', strtotime($penderekan["jam_penderekan"])) ?> </b> WIB, saya : <b class="output"><?= $penderekan["nama_ppns"] ?></b> NIP <b class="output"> <?= $penderekan["nip"] ?> </b> Selaku Penyidik Pegawai Negeri Sipil (PPNS) dari kantor tersebut di atas, bersama–sama dengan : <br> 1. <b class="output"><?= $penderekan["nama"] ?></b> <br> Masing–masing dari kantor yang sama, berdasarkan : --------------------------------------------------------------------------------------- Surat Tugas nomor <b class="output">583</b> / <b class="output">1811</b> / <b class="output"> 231 </b> tanggal <b class="output"> 31 Juli 2022</b> tentang <b class="output">PENDEREKAN</b><b>.</b> <br> Telah melakukan penderekan kendaraan sesuai Perda 5 Tahun 2014 tentang Transportasi di Jl ------------------------- <b class="output"><?= $penderekan['nama_jalan'] ?></b> ------------------------- dengan keterangan sebagai berikut :</p>
                 </td>
             </tr>
         </table>
-        <table>
+        <table id="data">
             <tr>
                 <td>Nama Pelanggar / Pengemudi </td>
                 <td>:</td>
@@ -268,7 +220,12 @@
             <tr>
                 <td>Jenis Kendaraan </td>
                 <td>:</td>
-                <td> <b class="output"><?= $penderekan["jenis_kendaraan"]  ?> / <?= $penderekan["klasifikasi_kendaraan"] ?> / <?= $penderekan["merk_kendaraan"] ?> </b></td>
+                <td> <b class="output"> <?= $penderekan["klasifikasi_kendaraan"] ?> </b></td>
+            </tr>
+            <tr>
+                <td>Merek Kendaraan </td>
+                <td>:</td>
+                <td> <b class="output"><?= $penderekan["merk_kendaraan"] ?> </b></td>
             </tr>
             <tr>
                 <td>Warna Kendaraan</td>
@@ -279,7 +236,6 @@
                 <td>Nomor Handphone</td>
                 <td>:</td>
                 <td> <b class="output"> <?= $penderekan["nomor_handphone_pengemudi"] ?> </b></td>
-
             </tr>
             <tr>
                 <td>TNKB</td>
@@ -292,54 +248,49 @@
                 <td> <b class="output"> <?= $penderekan["keterangan"] ?> </b></td>
             </tr>
         </table>
-        <br>
-        <table class="content-table">
+        <table>
             <tr>
                 <td>
-                    <p>Kendaraan tersebut dilakukan pemindahan ke tempat penyimpanan kendaraan : <b class="output"> <?= $penderekan["tempat_penyimpanan"] ?> </b></p>
+                    <p>Terhadap Kendaraan tersebut dilakukan pemindahan ke Tempat Penyimpanan Kendaraan : <b class="output"><?= $penderekan["tempat_penyimpanan"] ?></b><b>.</b></p>
                 </td>
             </tr>
         </table>
-
         <table class="content-table">
             <tr>
                 <td>
-                    <p>----------Untuk pengeluaran kendaraan saudara diwajibkan membayar Retribusi sesuai Perda 1 tahun 2015 tentang perubahan atas Perda 3 tahun 2012 tentang Retribusi Daerah dan menyelesaikan administrasi Pengeluaran Kendaraan, selanjutnya pengambilan kendaraan dilakukan sebagaimana tempat penyimpanan kendaraan atas.
-                        <br> ----------Demikian Berita Acara Penderekan Pemindahan Kendaraan ini dibuat dengan sebenarbenarnya atas kekuatan sumpah jabatan, kemudian ditutup dan ditandatangani di <b class="output">Jakarta</b> pada tanggal <b class="output"> <?= date_indo(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?> </b>
+                    <p>----------Untuk pengeluaran kendaraan saudara diwajibkan membayar Retribusi sesuai Perda 1 Tahun 2015 tentang Perubahan Atas Perda 3 Tahun 2012 tentang Retribusi Daerah dan menyelesaikan administrasi Pengeluaran Kendaraan, selanjutnya pengambilan kendaraan dilakukan di Tempat Penyimpanan Kendaraan atas.
+                        <br> ----------Demikian Berita Acara Penderekan Pemindahan Kendaraan ini dibuat dengan sebenar benarnya atas kekuatan sumpah jabatan, kemudian ditutup dan ditandatangani di <b class="output">Jakarta</b> pada tanggal <b class="output"> <?= date_indo(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?> </b>.
                     </p>
                 </td>
             </tr>
         </table>
+        <br>
         <table class="table-footer" align="center">
             <tr>
-                <td align="center">Petugas Lapangan</td>
                 <td align="center">Saksi</td>
-                <td align="center">Pengemudi</td>
+                <td align="center">Pelanggar</td>
+                <td align="center">Penyidik Pegawai Negeri Sipil</td>
             </tr>
             <tr>
-                <td align="center"><img class="ttd_digital" src="<?= $penderekan["tanda_tangan_petugas"] ?>" alt="tanda_tangan_petugas"></td>
-                <td align="center"><img class="ttd_digital" src="<?= $penderekan["tanda_tangan_saksi"] ?>" alt="tanda_tangan_saksi"></td>
-                <td align="center"><img class="ttd_digital" src="<?= $penderekan["ttd_digital"] ?>" alt="ttd_pengemudi"></td>
+                <td align="center"><img class="ttd_digital" src="<?= $penderekan["tanda_tangan_petugas"] ?>" alt="tanda_tangan_petugas"> </td>
+                <td align="center"><img class="ttd_digital" src="<?= $penderekan["ttd_digital"] ?>" alt="tanda_tangan_saksi"></td>
+                <td align="center"><img class="ttd_digital" src="<?= $penderekan["tanda_tangan"] ?>" alt="tanda_tangan_ppns"></td>
             </tr>
             <tr>
                 <td align="center">
-                    <p>( <b class="output"><?= $penderekan["nama"] ?></b> )</p>
-                </td>
-                <td align="center">
-                    <p>( <b class="output"><?= $penderekan["nama_saksi"] ?></b> )</p>
+                    <p>( <b class="output"><?= $penderekan["nama"] ?></b> )<br> <b class="output">NIP / NRK : <?= $penderekan["nip_npjlp"] ?> </p>
                 </td>
                 <td align="center">
                     <p>( <b class="output"> <?= $penderekan["nama_pengemudi"] ?></b> )</p>
                 </td>
+                <td align="center">
+                    <p>( <b class="output"> <?= $penderekan["nama_ppns"] ?> </b> ) <br> <b class="output">NIP : <?= $penderekan["nip"] ?> </b></p>
+                </td>
             </tr>
         </table>
-        <p style="text-align: center;">Mengetahui, <br> Penyidik Pegawai Negeri Sipil </p>
-        <div class="ttd">
-            <img class="ttd_digital" src="<?= $penderekan["tanda_tangan"] ?>" alt="tanda_tangan_ppns">
-        </div>
-        <p style=" text-align: center;">( <b class="output"> <?= $penderekan["nama_ppns"] ?> </b> )
-            <br> <b class="output">NIP : <?= $penderekan["nip"] ?> </b>
-        </p>
+
+        <img src="assets/img/cap.png" class="ttd_cap" style="margin-left:380px; margin-top:-180px;" alt="cap">
+
     </div>
 </body>
 
