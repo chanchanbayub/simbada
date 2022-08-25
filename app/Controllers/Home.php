@@ -18,7 +18,7 @@ class Home extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS '
+            'title' => 'SIMBADA LLAJ'
         ];
         return view('pages', $data);
     }

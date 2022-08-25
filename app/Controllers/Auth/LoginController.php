@@ -20,7 +20,7 @@ class LoginController extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Login'
+            'title' => 'SIMBADA LLAJ | Login'
         ];
 
         return view('auth/login', $data);

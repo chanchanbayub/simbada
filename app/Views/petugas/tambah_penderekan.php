@@ -76,6 +76,12 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="merk_kendaraan">Merk Kendaraan :</label>
+                <input type="text" class="form-control" id="merk_kendaraan" name="merk_kendaraan">
+                <div id="error_merk_kendaraan" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="type_kendaraan_id">Type Kendaraan :</label>
                 <select class="form-control" id="type_kendaraan_id" name="type_kendaraan_id" style="width:100% ;" disabled>
                     <option value="">--Silahkan Pilih--</option>
@@ -83,12 +89,7 @@
                 <div id="error_type_kendaraan_id" class="invalid-feedback">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="merk_kendaraan">Merk Kendaraan :</label>
-                <input type="text" class="form-control" id="merk_kendaraan" name="merk_kendaraan">
-                <div id="error_merk_kendaraan" class="invalid-feedback">
-                </div>
-            </div>
+
             <div class="form-group">
                 <label for="nomor_kendaraan">Nomor Kendaraan :</label>
                 <input type="text" class="form-control" id="nomor_kendaraan" name="nomor_kendaraan">

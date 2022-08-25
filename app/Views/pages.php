@@ -53,7 +53,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <span class="small"> <a href="/auth/login"> SIMDALOPS &copy; 2022 </a></span>
+                                <span class="small"> <a href="/auth/login"> SIMBADA LLAJ &copy; 2022 </a></span>
                             </div>
                             <div class="text-center">
                                 <span class="small">Dinas Perhubungan Provinsi DKI Jakarta</span>

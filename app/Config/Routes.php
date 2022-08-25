@@ -212,6 +212,7 @@ $routes->group('petugas', function ($routes) {
     $routes->post('penderekan/update', 'Petugas\Penderekan::update');
 
     $routes->get('data_penderekan', 'Petugas\DataPenderekan::index');
+    $routes->get('data_penderekan/view/(:any)', 'Petugas\DataPenderekan::view_kendaraan/$1');
     $routes->get('data_penderekan/edit', 'Petugas\DataPenderekan::edit');
     $routes->get('data_penderekan/edit_data/(:any)', 'Petugas\DataPenderekan::edit_data/$1');
     $routes->post('data_penderekan/hapus', 'Petugas\DataPenderekan::hapus');

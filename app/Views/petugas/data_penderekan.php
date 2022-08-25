@@ -32,7 +32,7 @@
                     <?php foreach ($data_penderekan as $data_penderekan) : ?>
                         <tr>
                             <td><?= $no++ ?>.</td>
-                            <td><?= $data_penderekan["noBap"] ?></td>
+                            <td> <a href="/petugas/data_penderekan/view/<?= $data_penderekan["noBap"] ?>"> <?= $data_penderekan["noBap"] ?> </a></td>
                             <td><?= format_indo(date('Y-m-d', strtotime($data_penderekan["tanggal_penderekan"])))  ?></td>
                             <td><?= $data_penderekan["jenis_kendaraan"] ?></td>
                             <td><?= $data_penderekan["klasifikasi_kendaraan"] ?></td>

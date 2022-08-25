@@ -17,7 +17,7 @@ class Bap extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | BAPPK',
+            'title' => 'SIMBADA LLAJ | BAPPK',
             'bap' => $this->bapModel->getNoBapWithUnit(session('ukpd_id'), session('username')),
         ];
 

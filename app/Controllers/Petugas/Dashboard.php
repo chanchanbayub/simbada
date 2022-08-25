@@ -22,7 +22,7 @@ class Dashboard extends BaseController
     {
         $date = date('Y-m-d');
         $data = [
-            'title' => 'SIMDALOPS | Dashboard',
+            'title' => 'SIMBADA LLAJ | Dashboard',
             'jumlahBap' => $this->bapModel->getJumlahBap(session('username')),
             'jumlahPenderekan' => $this->penderekanModel->getJumlahPenderekan(session('username'), $date)
         ];

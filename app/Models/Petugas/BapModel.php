@@ -68,4 +68,19 @@ class BapModel extends Model
             ->orderBy('bap.id desc')
             ->countAllResults();
     }
+
+    public function getNoBapWithJoin($noBap)
+    {
+        return $this->table($this->table)
+            ->select($this->fieldTable)
+            ->where(['bap.noBap' => $noBap])
+            ->join('ukpd', 'ukpd.id = bap.ukpd_id')
+            ->join('unit_penindak', 'unit_penindak.id = bap.unit_id')
+            ->join('ppns', 'ppns.id = bap.ppns_id')
+            ->join('status_bap', 'status_bap.id = bap.status_id')
+            ->join('petugas', 'petugas.unit_id = unit_penindak.id')
+            ->join('jabatan', 'jabatan.id = petugas.jabatan_id')
+            ->orderBy('bap.id desc')
+            ->get()->getRowArray();
+    }
 }

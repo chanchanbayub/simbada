@@ -69,7 +69,7 @@ class Penderekan extends BaseController
             return redirect()->back();
         } else {
             $data = [
-                'title' => 'SIMDALOPS | Tambah Penderekan',
+                'title' => 'SIMBADA LLAJ | Tambah Penderekan',
                 'noBap' => $bap,
                 'jenis_kendaraan' => $this->jenisKendaraanModel->findAll(),
                 'jenis_pelanggaran' => $this->jenisPelanggaranModel->findAll(),
