@@ -19,7 +19,7 @@ class JenisPelanggaran extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Jenis Pelanggaran',
+            'title' => 'SIMBADA LLAJ  | Jenis Pelanggaran',
             'jenis_pelanggaran' => $this->jenisPelanggaranModel->findAll()
         ];
 

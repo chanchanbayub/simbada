@@ -25,7 +25,7 @@ class UserManagement extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Unit Penindak',
+            'title' => 'SIMBADA LLAJ | Unit Penindak',
             'ukpd' => $this->ukpdModel->findAll(),
             'role_management' => $this->roleManagementModel->findAll(),
             'user_management' => $this->userManagementModel->getUserManagement()

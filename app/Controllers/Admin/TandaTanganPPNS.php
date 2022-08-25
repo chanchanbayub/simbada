@@ -22,7 +22,7 @@ class TandaTanganPPNS extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Tanda Tangan PPNS',
+            'title' => 'SIMBADA LLAJ | Tanda Tangan PPNS',
             'tanda_tangan' => $this->tandaTanganPPNSModel->getTandaTanganPPNS(),
             'ppns' => $this->ppnsModel->tandaTanganPPNSNull()
         ];

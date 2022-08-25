@@ -22,7 +22,7 @@ class TandaTanganPetugas extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Tanda Tangan Petugas',
+            'title' => 'SIMBADA LLAJ | Tanda Tangan Petugas',
             'tanda_tangan' => $this->tandaTanganPetugasModel->getTandaTanganPetugas(),
             'petugas' => $this->petugasModel->tandaTanganPetugasNull()
         ];

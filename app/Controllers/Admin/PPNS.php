@@ -26,7 +26,7 @@ class PPNS extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Penyidik Pegawai Negeri Sipil',
+            'title' => 'SIMBADA LLAJ | Penyidik Pegawai Negeri Sipil',
             'ukpd' => $this->ukpdModel->findAll(),
             'ppns' => $this->ppnsModel->getPPNS()
         ];

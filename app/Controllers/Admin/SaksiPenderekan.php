@@ -29,7 +29,7 @@ class SaksiPenderekan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Saksi Penderekan',
+            'title' => 'SIMBADA LLAJ | Saksi Penderekan',
             'ukpd' => $this->ukpdModel->orderBy('id desc')->findAll(),
             'jabatan' => $this->jabatanModel->where(["id" => 2])->findAll(),
             'saksi_penderekan' => $this->saksiPenderekanModel->getSaksi()

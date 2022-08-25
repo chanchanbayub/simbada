@@ -20,7 +20,7 @@ class Ukpd extends BaseController
     {
 
         $data = [
-            'title' => 'SIMDALOPS | UKPD',
+            'title' => 'SIMBADA LLAJ | UKPD',
             'ukpd' => $this->ukpdModel->findAll()
         ];
 

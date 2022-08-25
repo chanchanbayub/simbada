@@ -183,6 +183,7 @@ $routes->group('admin', function ($routes) {
 
     // Penderekan
     $routes->get('penderekan', 'Admin\Penderekan::index');
+    $routes->get('penderekan/view/(:any)', 'Petugas\DataPenderekan::view_kendaraan/$1');
     $routes->get('penderekan/form_penderekan', 'Admin\Penderekan::form_penderekan');
     $routes->get('penderekan/getNoBap', 'Admin\Penderekan::getNoBap');
     $routes->post('penderekan/insert', 'Admin\Penderekan::insert');

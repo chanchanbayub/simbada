@@ -70,7 +70,7 @@ class Penderekan extends BaseController
     {
         helper('format');
         $data = [
-            'title' => 'SIMDALOPS | Penderekan ' . session('ukpd'),
+            'title' => 'SIMBADA LLAJ | Penderekan ' . session('ukpd'),
             'data_penderekan' => $this->penderekanModel->getDataPenderekan(session('ukpd_id'), session('username'))
         ];
 
@@ -795,5 +795,17 @@ class Penderekan extends BaseController
 
             return json_encode($alert);
         }
+    }
+    public function view_detail($noBap)
+    {
+        $penderekan = $this->penderekanModel->getDetailPenderekan($noBap);
+        // dd($penderekan);
+
+        $data = [
+            'title' => 'SIMBADA LLAJ | Detail Kendaraan',
+            'penderekan' => $penderekan
+        ];
+
+        return view('admin/detail', $data);
     }
 }

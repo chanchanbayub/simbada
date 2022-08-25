@@ -20,7 +20,7 @@ class StatusBap extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Status Berita Acara Penderekan',
+            'title' => 'SIMBADA LLAJ | Status Berita Acara Penderekan',
             'status_bap' => $this->statusBapModel->orderBy('id desc')->findAll(),
         ];
 

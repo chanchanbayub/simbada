@@ -19,7 +19,7 @@ class Jabatan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Jabatan',
+            'title' => 'SIMBADA LLAJ | Jabatan',
             'jabatan' => $this->jabatanModel->orderBy('id desc')->findAll()
         ];
 

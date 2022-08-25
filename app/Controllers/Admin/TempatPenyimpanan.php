@@ -22,7 +22,7 @@ class TempatPenyimpanan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Tempat Penyimpanan Kendaraan',
+            'title' => 'SIMBADA LLAJ | Tempat Penyimpanan Kendaraan',
             'ukpd' => $this->ukpdModel->findAll(),
             'tempat_penyimpanan' => $this->tempatPenyimpananModel->getPenyimpanan()
         ];

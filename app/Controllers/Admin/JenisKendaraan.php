@@ -19,7 +19,7 @@ class JenisKendaraan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Jenis Kendaraan',
+            'title' => 'SIMBADA LLAJ  | Jenis Kendaraan',
             'jenis_kendaraan' => $this->jenisKendaraanModel->findAll()
         ];
 

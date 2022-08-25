@@ -22,7 +22,7 @@ class TypeKendaraan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Type Kendaraan',
+            'title' => 'SIMBADA LLAJ | Type Kendaraan',
             'klasifikasi' => $this->klasifikasiKendaraanModel->findAll(),
             'type_kendaraan' => $this->typeKendaraanModel->getTypeKendaraan()
         ];

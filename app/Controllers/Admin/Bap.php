@@ -34,7 +34,7 @@ class Bap extends BaseController
         // dd($bap);
 
         $data = [
-            'title' => 'SIMDALOPS | Nomor Berita Acara Penderekan',
+            'title' => 'SIMBADA LLAJ | Nomor Berita Acara Penderekan',
             'ukpd' => $this->ukpdModel->findAll(),
             'ppns' => $this->ppnsModel->findAll(),
             'unit_penindak' => $this->unitPenindakModel->findAll(),

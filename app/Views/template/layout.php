@@ -69,7 +69,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Simdalops 2022</span>
+                        <span>Copyright &copy; Simbada LLAJ <span id="date"></span> </span>
                     </div>
                 </div>
             </footer>
@@ -108,6 +108,11 @@
 
     <!-- Bootstrap core JavaScript-->
     <!-- <script src="/assets/vendor/jquery/jquery.min.js"></script> -->
+    <script>
+        let getYear = new Date().getFullYear();
+        let date = document.querySelector('#date').innerHTML = `${getYear}`;
+        // date.innerHTML(getYear);
+    </script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -125,12 +130,6 @@
     <!-- select 2 -->
     <script src="/assets/select2/js/select2.min.js"></script>
 
-    <!-- SignaturPad -->
-    <!-- <script src="/assets/vendor/chart.js/Chart.min.js"></script> -->
-
-    <!-- Page level custom scripts
-    <script src="/assets/js/demo/chart-area-demo.js"></script>
-    <script src="/assets/js/demo/chart-pie-demo.js"></script> -->
 
 </body>
 

@@ -113,4 +113,28 @@ class PenderekanModel extends Model
             ->orderBy('penderekan.id desc')
             ->countAllResults();
     }
+
+    public function getDetailPenderekan($noBap)
+    {
+        return $this->table($this->table)
+            ->select($this->detail)
+            ->join('bap', 'bap.id = penderekan.bap_id')
+            ->join('unit_penindak', 'unit_penindak.id = bap.unit_id')
+            ->where(["noBap" => $noBap])
+            ->join('kendaraan', 'kendaraan.id_penderekan = penderekan.id')
+            ->join('jenis_kendaraan', 'kendaraan.jenis_kendaraan_id = jenis_kendaraan.id')
+            ->join('klasifikasi_kendaraan', 'kendaraan.klasifikasi_kendaraan_id = klasifikasi_kendaraan.id')
+            ->join('type_kendaraan', 'kendaraan.type_kendaraan_id = type_kendaraan.id')
+            ->join('foto_kendaraan', 'penderekan.id = foto_kendaraan.id_penderekan')
+            ->join('jenis_pelanggaran', 'jenis_pelanggaran.id = penderekan.jenis_pelanggaran_id')
+            ->join('lokasi_penderekan', 'penderekan.id = lokasi_penderekan.id_penderekan')
+            ->join('provinsi', 'lokasi_penderekan.provinsi_id = provinsi.id')
+            ->join('kota', 'lokasi_penderekan.kota_id = kota.id')
+            ->join('kecamatan', 'lokasi_penderekan.kecamatan_id = kecamatan.id')
+            ->join('kelurahan', 'lokasi_penderekan.kelurahan_id = kelurahan.id')
+            ->join('identitas_pengemudi', 'penderekan.id = identitas_pengemudi.id_penderekan')
+            ->join('tempat_penyimpanan', 'tempat_penyimpanan.id = penderekan.tempat_penyimpanan_kendaraan_id')
+            ->orderBy('penderekan.id desc')
+            ->get()->getRowArray();
+    }
 }

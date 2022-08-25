@@ -20,7 +20,7 @@ class JenisPenindakan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Jenis Penindakan',
+            'title' => 'SIMBADA LLAJ | Jenis Penindakan',
             'jenis_penindakan' => $this->jenisPenindakanModel->findAll()
         ];
 

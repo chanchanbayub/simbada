@@ -22,7 +22,7 @@ class UnitPenindak extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Unit Penindak',
+            'title' => 'SIMBADA LLAJ | Unit Penindak',
             'ukpd' => $this->ukpdModel->findAll(),
             'unit_penindak' => $this->unitPenindakModel->getUnit(),
         ];

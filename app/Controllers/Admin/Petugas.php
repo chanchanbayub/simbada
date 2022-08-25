@@ -32,7 +32,7 @@ class Petugas extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Petugas',
+            'title' => 'SIMBADA LLAJ | Petugas',
             'ukpd' => $this->ukpdModel->findAll(),
             'unit_penindak' => $this->unitPenindakModel->findAll(),
             'petugas' => $this->petugasModel->getPetugas(session('ukpd_id')),

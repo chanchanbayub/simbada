@@ -22,7 +22,7 @@ class TandaTanganSaksi extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Tanda Tangan Saksi',
+            'title' => 'SIMBADA LLAJ | Tanda Tangan Saksi',
             'tanda_tangan_saksi' => $this->tandaTanganSaksiModel->getTandaTanganSaksi(),
             'saksi' => $this->saksiPenderekanModel->tandaTanganSaksiNull()
         ];

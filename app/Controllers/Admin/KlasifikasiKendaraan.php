@@ -22,7 +22,7 @@ class KlasifikasiKendaraan extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Klasifikasi Kendaraan',
+            'title' => 'SIMBADA LLAJ  | Klasifikasi Kendaraan',
             'jenis_kendaraan' => $this->jenisKendaraanModel->findAll(),
             'klasifikasi_kendaraan' => $this->klasifikasiKendaraanModel->getKlasifikasi()
         ];

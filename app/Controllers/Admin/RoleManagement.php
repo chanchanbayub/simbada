@@ -20,7 +20,7 @@ class RoleManagement extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SIMDALOPS | Role Management',
+            'title' => 'SIMBADA LLAJ  | Role Management',
             'role_management' => $this->roleManagementModel->orderBy('id desc')->findAll(),
         ];
 
