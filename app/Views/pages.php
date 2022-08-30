@@ -74,7 +74,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="..." class="img-fluid" id="foto_kendaraan" alt="Responsive image">
+                    <img src="..." class="img-fluid img-thumbnail" id="foto_kendaraan" alt="Responsive image">
                     <br>
                     <div class="table-responsive">
                         <table class="table">

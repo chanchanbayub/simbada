@@ -40,10 +40,10 @@
         </div>
     </div>
 
+</div>
+<!-- Content Row -->
 
-    <!-- Content Row -->
-
-    <!-- <div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -58,10 +58,10 @@
     </div>
 </div> -->
 
-    <script src="/assets/vendor/jquery/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> -->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> -->
 
-    <!-- <script>
+<!-- <script>
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -99,4 +99,4 @@
     });
 </script> -->
 
-    <?= $this->endSection(); ?>
+<?= $this->endSection(); ?>

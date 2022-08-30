@@ -217,6 +217,8 @@ $routes->group('petugas', function ($routes) {
     $routes->get('data_penderekan/edit', 'Petugas\DataPenderekan::edit');
     $routes->get('data_penderekan/edit_data/(:any)', 'Petugas\DataPenderekan::edit_data/$1');
     $routes->post('data_penderekan/hapus', 'Petugas\DataPenderekan::hapus');
+
+    $routes->get('profile', 'Petugas\Profile::index');
 });
 
 $routes->group('pdf', function ($routes) {
