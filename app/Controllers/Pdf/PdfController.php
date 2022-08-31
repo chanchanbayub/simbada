@@ -33,6 +33,6 @@ class PdfController extends BaseController
         $this->mpdf->WriteHTML($html);
 
         $this->response->setHeader('Content-Type', 'application/pdf');;
-        $this->mpdf->output('BAP_DIGITAL.pdf', 'I');
+        $this->mpdf->output('BAP_' . $penderekan["nomor_kendaraan"] . '.pdf', 'I');
     }
 }

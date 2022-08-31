@@ -548,7 +548,7 @@
 
         setTimeout(function() {
             snap();
-        }, 5000);
+        }, 8000);
 
         $("#syarat_dan_ketentuan").on('submit', '#signaturPad', function(e) {
             e.preventDefault();

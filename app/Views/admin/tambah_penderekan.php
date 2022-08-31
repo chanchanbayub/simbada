@@ -19,7 +19,7 @@
         max-width: 100% !important;
     }
 
-    #my_camera {
+    .camera {
         display: none;
     }
 </style>
@@ -596,8 +596,7 @@
 
         setTimeout(function() {
             snap();
-        }, 5000);
-
+        }, 8000);
 
         $("#syarat_dan_ketentuan").on('submit', '#signaturPad', function(e) {
             e.preventDefault();

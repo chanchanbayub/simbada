@@ -80,7 +80,7 @@ class Penderekan extends BaseController
     public function form_penderekan()
     {
         $data = [
-            'title' => 'SIMDALOPS | Penderekan ' . session('ukpd'),
+            'title' => 'SIMBADA LLAJ | Penderekan ' . session('ukpd'),
             'jenis_kendaraan' => $this->jenisKendaraanModel->findAll(),
             'jenis_pelanggaran' => $this->jenisPelanggaranModel->findAll(),
             'klasifikasi_kendaraan' => $this->klasifikasiKendaraanModel->findAll(),
