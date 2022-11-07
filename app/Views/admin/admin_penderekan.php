@@ -33,6 +33,7 @@
                         <th>Lokasi Penderekan (Nama Jalan)</th>
                         <th>Nama Pengemudi / Pelanggar</th>
                         <th>Alamat Pengemudi / Pelanggar</th>
+                        <th>Nomor Handphone Pengemudi / Pelanggar</th>
                         <th>Tempat Penyimpanan Kendaraan</th>
                         <th style="text-align:center ;">Aksi</th>
                     </tr>
@@ -51,6 +52,7 @@
                             <td> Jl <?= $data_penderekan["nama_jalan"] ?></td>
                             <td><?= $data_penderekan["nama_pengemudi"] ?></td>
                             <td><?= $data_penderekan["alamat_pengemudi"] ?></td>
+                            <td><a href='https://api.whatsapp.com/send?phone=<?= $data_penderekan["nomor_handphone_pengemudi"] ?>'>Kirim VIA Whatsapp</a> </td>
                             <td><?= $data_penderekan["tempat_penyimpanan"] ?></td>
                             <td style="text-align:center;">
                                 <button class="btn btn-circle btn-sm btn-danger hapus" data-toggle="modal" data-target="#modalHapus" data-id="<?= $data_penderekan["id"] ?>">

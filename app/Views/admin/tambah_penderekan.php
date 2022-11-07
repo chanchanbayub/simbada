@@ -208,8 +208,8 @@
             </div>
             <div class="form-group">
                 <label for="nomor_handphone_pengemudi">Nomor Handphone Pengemudi :</label>
-                <input type="text" class="form-control" id="nomor_handphone_pengemudi" name="nomor_handphone_pengemudi">
-                <div id="error_nomor_handphone_pengemudi" class="invalid-feedback">
+                <input type="text" class="form-control" id="nomor_handphone_pengemudi" name="nomor_handphone_pengemudi" placeholder="cth: 6282102132131">
+                <div id=" error_nomor_handphone_pengemudi" class="invalid-feedback">
                 </div>
             </div>
             <div class="form-group">

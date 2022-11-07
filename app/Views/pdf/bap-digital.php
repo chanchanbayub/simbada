@@ -125,7 +125,7 @@
         }
 
         .output {
-            color: blue;
+            color: black;
         }
 
         .ttd_digital {
@@ -202,7 +202,7 @@
         <table class="content-table">
             <tr>
                 <td>
-                    <p style="text-align:justify;">Pada hari ini<b class="output"> <?= tanggal_indonesia(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?></b>, tanggal <b class="output"><?= date('d', strtotime($penderekan["tanggal_penderekan"])) ?></b>, bulan <b class="output"> <?= bulan(date('n', strtotime($penderekan["tanggal_penderekan"])))  ?> </b> tahun <b class="output"> <?= date('Y', strtotime($penderekan["tanggal_penderekan"])) ?> </b>pukul <b class="output"> <?= date('H:i', strtotime($penderekan["jam_penderekan"])) ?> </b> WIB, saya : <b class="output"><?= $penderekan["nama_ppns"] ?></b> NIP <b class="output"> <?= $penderekan["nip"] ?> </b> Selaku Penyidik Pegawai Negeri Sipil (PPNS) dari kantor tersebut di atas, bersama–sama dengan : <br> 1. <b class="output"><?= $penderekan["nama"] ?></b> <br> Masing–masing dari kantor yang sama, berdasarkan : --------------------------------------------------------------------------------------- Surat Tugas nomor <b class="output">583</b> / <b class="output">1811</b> / <b class="output"> 231 </b> tanggal <b class="output"> 31 Juli 2022</b> tentang <b class="output">PENDEREKAN</b><b>.</b> <br> Telah melakukan penderekan kendaraan sesuai Perda 5 Tahun 2014 tentang Transportasi di Jl ------------------------- <b class="output"><?= $penderekan['nama_jalan'] ?></b> ------------------------- dengan keterangan sebagai berikut :</p>
+                    <p style="text-align:justify;">Pada hari ini<b class="output"> <?= tanggal_indonesia(date('Y-m-d', strtotime($penderekan["tanggal_penderekan"]))) ?></b>, tanggal <b class="output"><?= date('d', strtotime($penderekan["tanggal_penderekan"])) ?></b>, bulan <b class="output"> <?= bulan(date('n', strtotime($penderekan["tanggal_penderekan"])))  ?> </b> tahun <b class="output"> <?= date('Y', strtotime($penderekan["tanggal_penderekan"])) ?> </b>pukul <b class="output"> <?= date('H:i', strtotime($penderekan["jam_penderekan"])) ?> </b> WIB, saya : <b class="output"><?= $penderekan["nama_ppns"] ?></b> NIP <b class="output"> <?= $penderekan["nip"] ?> </b> Selaku Penyidik Pegawai Negeri Sipil (PPNS) dari kantor tersebut di atas, bersama–sama dengan : <br> 1. <b class="output"><?= $penderekan["nama"] ?></b> <br> Masing–masing dari kantor yang sama, berdasarkan : --------------------------------------------------------------------------------------- Surat Tugas nomor <b class="output">1044 / PH.06.00 </b> tanggal <b class="output"> 31 Oktober 2022</b> tentang <b class="output">PENDEREKAN</b><b>.</b> <br> Telah melakukan penderekan kendaraan sesuai Perda 5 Tahun 2014 tentang Transportasi di Jl ------------------------- <b class="output"><?= $penderekan['nama_jalan'] ?></b> ------------------------- dengan keterangan sebagai berikut :</p>
                 </td>
             </tr>
         </table>
