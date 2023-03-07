@@ -25,6 +25,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Surat Tugas</th>
+                        <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -34,6 +35,7 @@
                         <tr>
                             <td><?= $no++ ?>.</td>
                             <td><?= $surat_tugas["nomor_surat"] ?></td>
+                            <td><?= $surat_tugas["tanggal"] ?></td>
                             <td>
                                 <button class="btn btn-circle btn-sm btn-danger hapus" data-toggle="modal" data-target="#modalHapus" data-id="<?= $surat_tugas["id"] ?>">
                                     <i class="fa fa-trash"></i>
@@ -66,6 +68,13 @@
                         <label for="ukpd" class="col-form-label">Nomor Surat Tugas :</label>
                         <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" placeholder="silahkan isi">
                         <div class="invalid-feedback" id="error-nomor_surat">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ukpd" class="col-form-label">Tanggal Surat Tugas :</label>
+                        <input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="silahkan isi">
+                        <div class="invalid-feedback" id="error-tanggal">
 
                         </div>
                     </div>
@@ -124,6 +133,13 @@
 
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="ukpd" class="col-form-label">Tanggal Surat Tugas :</label>
+                        <input type="text" class="form-control" id="tanggal_edit" name="tanggal">
+                        <div class="invalid-feedback" id="error-tanggal-edit">
+
+                        </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal"> <i class="fa fa-times"></i> Batal</button>
                         <button type="submit" class="btn btn-primary update"> <i class="fa fa-paper-plane"></i> Kirim</button>
@@ -144,6 +160,7 @@
         e.preventDefault();
 
         let nomor_surat = $("#nomor_surat").val();
+        let tanggal = $("#tanggal").val();
 
         $.ajax({
             url: 'nomor_spt/insert',
@@ -151,6 +168,7 @@
             dataType: 'json',
             data: {
                 nomor_surat: nomor_surat,
+                tanggal: tanggal,
             },
             beforeSend: function() {
                 $(".save").html('<i class="fa fa-spinner"> </i>')
@@ -164,6 +182,13 @@
                     } else {
                         $("#nomor_surat").removeClass('is-invalid');
                         $("#error-nomor_surat").html('');
+                    }
+                    if (response.error.tanggal) {
+                        $("#tanggal").addClass('is-invalid');
+                        $("#error-tanggal").html(response.error.tanggal);
+                    } else {
+                        $("#tanggal").removeClass('is-invalid');
+                        $("#error-tanggal").html('');
                     }
 
                 } else {
@@ -239,6 +264,7 @@
             success: function(response) {
                 $("#id").val(response.id);
                 $("#nomor_surat_edit").val(response.nomor_surat);
+                $("#tanggal_edit").val(response.tanggal);
             }
         });
     });
@@ -249,6 +275,7 @@
 
         let id = $("#id").val();
         let nomor_surat = $("#nomor_surat_edit").val();
+        let tanggal = $("#tanggal_edit").val();
 
         $.ajax({
             url: 'nomor_spt/update',
@@ -257,6 +284,7 @@
             data: {
                 id: id,
                 nomor_surat: nomor_surat,
+                tanggal: tanggal,
             },
             beforeSend: function() {
                 $(".update").html('<i class="fa fa-spinner"> </i>')
@@ -270,6 +298,13 @@
                     } else {
                         $("#nomor_surat_edit").removeClass('is-invalid');
                         $("#error-nomor_surat-edit").html('');
+                    }
+                    if (response.error.tanggal) {
+                        $("#tanggal_edit").addClass('is-invalid');
+                        $("#error-tanggal-edit").html(response.error.tanggal);
+                    } else {
+                        $("#tanggal_edit").removeClass('is-invalid');
+                        $("#error-tanggal-edit").html('');
                     }
                 } else {
                     Swal.fire({

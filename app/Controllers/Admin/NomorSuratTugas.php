@@ -36,19 +36,28 @@ class NomorSuratTugas extends BaseController
                         'required' => 'Nomor Surat Tidak Boleh Kosong !'
                     ]
                 ],
+                'tanggal' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Tanggal Tidak Boleh Kosong !'
+                    ]
+                ],
 
             ])) {
                 $alert = [
                     'error' => [
                         'nomor_surat' => $this->validation->getError('nomor_surat'),
+                        'tanggal' => $this->validation->getError('tanggal'),
                     ]
                 ];
             } else {
 
                 $spt = $this->request->getPost('nomor_surat');
+                $tanggal = $this->request->getPost('tanggal');
 
                 $this->nomorSPTModel->save([
                     'nomor_surat' => $spt,
+                    'tanggal' => $tanggal,
                 ]);
 
                 $alert = [
@@ -98,21 +107,30 @@ class NomorSuratTugas extends BaseController
                         'required' => 'Nomor Surat Tidak Boleh Kosong !'
                     ]
                 ],
+                'tanggal' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Tanggal Tidak Boleh Kosong !'
+                    ]
+                ],
 
             ])) {
                 $alert = [
                     'error' => [
                         'nomor_surat' => $this->validation->getError('nomor_surat'),
+                        'tanggal' => $this->validation->getError('tanggal'),
                     ]
                 ];
             } else {
 
                 $id = $this->request->getPost('id');
                 $spt = $this->request->getPost('nomor_surat');
+                $tanggal = $this->request->getPost('tanggal');
 
                 $this->nomorSPTModel->update($id, [
                     'id' => $id,
                     'nomor_surat' => $spt,
+                    'tanggal' => $tanggal,
                 ]);
 
                 $alert = [

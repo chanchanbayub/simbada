@@ -8,7 +8,7 @@ class NomorSPTModel extends Model
 {
     protected $table            = 'nomor_surat_tugas';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['nomor_surat'];
+    protected $allowedFields    = ['nomor_surat', 'tanggal'];
 
     // Dates
     protected $useTimestamps = true;

@@ -19,6 +19,10 @@ class NomorSuratTugas extends Migration
                 'type' => 'varchar',
                 'constraint' => 225
             ],
+            'tanggal' => [
+                'type' => 'varchar',
+                'constraint' => 225
+            ],
             'created_at' => [
                 'type' => 'datetime'
             ],
@@ -26,7 +30,8 @@ class NomorSuratTugas extends Migration
                 'type' => 'datetime'
             ]
         ]);
-        $this->forge->addKey('id');
+
+        $this->forge->addKey('id', true);
         $attributes = ['ENGINE' => 'innoDB'];
         $this->forge->createTable('nomor_surat_tugas', false, $attributes);
     }
