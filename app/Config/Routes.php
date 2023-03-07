@@ -126,20 +126,20 @@ $routes->group('admin', function ($routes) {
     $routes->post('petugas/hapus', 'Admin\Petugas::hapus');
     $routes->post('petugas/update', 'Admin\Petugas::update');
 
-    // petugas
+    // petugas_tanda_tangan
     $routes->get('tanda_tangan_petugas', 'Admin\TandaTanganPetugas::index');
     $routes->post('tanda_tangan_petugas/insert', 'Admin\TandaTanganPetugas::insert');
     $routes->get('tanda_tangan_petugas/edit', 'Admin\TandaTanganPetugas::edit');
     $routes->post('tanda_tangan_petugas/hapus', 'Admin\TandaTanganPetugas::hapus');
 
-    // petugas
+    // saksi_penderekan
     $routes->get('saksi_penderekan', 'Admin\SaksiPenderekan::index');
     $routes->post('saksi_penderekan/insert', 'Admin\SaksiPenderekan::insert');
     $routes->get('saksi_penderekan/edit', 'Admin\SaksiPenderekan::edit');
     $routes->post('saksi_penderekan/hapus', 'Admin\SaksiPenderekan::hapus');
     $routes->post('saksi_penderekan/update', 'Admin\SaksiPenderekan::update');
 
-    // petugas
+    // tanda_tangan_saksi
     $routes->get('tanda_tangan_saksi', 'Admin\TandaTanganSaksi::index');
     $routes->post('tanda_tangan_saksi/insert', 'Admin\TandaTanganSaksi::insert');
     $routes->get('tanda_tangan_saksi/edit', 'Admin\TandaTanganSaksi::edit');
@@ -180,6 +180,13 @@ $routes->group('admin', function ($routes) {
     $routes->get('jabatan/edit', 'Admin\Jabatan::edit');
     $routes->post('jabatan/hapus', 'Admin\Jabatan::hapus');
     $routes->post('jabatan/update', 'Admin\Jabatan::update');
+
+    // Nomor Surat Tugas
+    $routes->get('nomor_spt', 'Admin\NomorSuratTugas::index');
+    $routes->post('nomor_spt/insert', 'Admin\NomorSuratTugas::insert');
+    $routes->get('nomor_spt/edit', 'Admin\NomorSuratTugas::edit');
+    $routes->post('nomor_spt/hapus', 'Admin\NomorSuratTugas::hapus');
+    $routes->post('nomor_spt/update', 'Admin\NomorSuratTugas::update');
 
     // Penderekan
     $routes->get('penderekan', 'Admin\Penderekan::index');

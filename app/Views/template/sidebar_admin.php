@@ -46,6 +46,7 @@
                 <a class="collapse-item" href="/admin/role_management">Role Management</a>
                 <a class="collapse-item" href="/admin/user_management">User Management</a>
                 <a class="collapse-item" href="/admin/jabatan">Jabatan</a>
+                <a class="collapse-item" href="/admin/nomor_spt">Nomor Surat Tugas</a>
             </div>
         </div>
     </li>
